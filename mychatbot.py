@@ -63,9 +63,6 @@ def pagina_principal():
 # PÁGINAS ==================================================
 
 
-st.sidebar.divider()
-st.sidebar.markdown("Desenvolvido por [Leandro Souza](https://br.linkedin.com/in/leandro-souza-313136190)")
-
 def tab_conversas(tab):
 
     tab.button('➕ Nova conversa',
@@ -102,7 +99,6 @@ def tab_configuracoes(tab):
         st.session_state['api_key'] = chave
         salva_chave(chave)
         tab.success('Chave salva com sucesso')
-
 
 # MAIN ==================================================
 
