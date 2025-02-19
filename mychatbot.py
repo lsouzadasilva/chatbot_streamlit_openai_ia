@@ -100,6 +100,9 @@ def tab_configuracoes(tab):
         salva_chave(chave)
         tab.success('Chave salva com sucesso')
 
+        st.sidebar.divider()
+        st.sidebar.markdown("Desenvolvido por [Leandro Souza](https://br.linkedin.com/in/leandro-souza-313136190)")
+
 # MAIN ==================================================
 
 def main():
