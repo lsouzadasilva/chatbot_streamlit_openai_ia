@@ -3,6 +3,15 @@ import streamlit as st
 from utils_openai import retorna_resposta_modelo
 from utils_file import *
 
+# --- Ocult menus ---
+hide_st_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_st_style, unsafe_allow_html=True)
+
 
 # INICIALIZAÇÃO ==================================================
 
