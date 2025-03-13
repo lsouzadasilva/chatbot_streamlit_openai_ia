@@ -38,7 +38,7 @@ def pagina_principal():
         chat = st.chat_message(mensagem['role'])
         chat.markdown(mensagem['content'])
     
-    prompt = st.chat_input('Fale com o chat')
+    prompt = st.chat_input('Faça sua pergunta aqui: ')
     if prompt:
         if st.session_state['api_key'] == '':
             st.error('Adicone uma chave de api na aba de configurações')
