@@ -3,7 +3,7 @@ import streamlit as st
 from utils_openai import retorna_resposta_modelo
 from utils_file import *
 
-
+# CONFIGURAÇÃO DA PAGINA ==================================================
 def config_pag():
         st.set_page_config(
                 page_title='J.A.R.V.I.S',
@@ -11,7 +11,8 @@ def config_pag():
             )
 config_pag()
 
-# --- Ocult menus ---
+
+# OCULTAR MENUS ==================================================
 hide_st_style = """
             <style>
             #MainMenu {visibility: hidden;}
