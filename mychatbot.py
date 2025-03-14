@@ -32,6 +32,10 @@ def pagina_principal():
     
     mensagens = ler_mensagens(st.session_state['mensagens'])
 
+    st.set_page_config(
+        page_title='J.A.R.V.I.S',
+        page_icon=':robot_face:'
+    )
     st.header('🤖 J.A.R.V.I.S', divider=True)
 
     for mensagem in mensagens:
