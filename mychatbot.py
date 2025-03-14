@@ -3,10 +3,13 @@ import streamlit as st
 from utils_openai import retorna_resposta_modelo
 from utils_file import *
 
-st.set_page_config(
-        page_title='J.A.R.V.I.S',
-        page_icon=':robot_face:'
-    )
+
+def config_pag():
+        st.set_page_config(
+                page_title='J.A.R.V.I.S',
+                page_icon=':robot_face:'
+            )
+config_pag()
 
 # --- Ocult menus ---
 hide_st_style = """
