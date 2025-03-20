@@ -67,7 +67,7 @@ def pagina_principal():
                                                 modelo=st.session_state['modelo'],
                                                 stream=True)
             for resposta in respostas:
-                resposta_completa += resposta.choices[0].delta.get('content', '')
+                resposta_completa += resposta.choices[0].delta.content or ''
                 placeholder.markdown(resposta_completa + "▌")
             placeholder.markdown(resposta_completa)
             nova_mensagem = {'role': 'assistant',

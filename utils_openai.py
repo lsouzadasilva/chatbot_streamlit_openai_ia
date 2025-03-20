@@ -7,8 +7,8 @@ def retorna_resposta_modelo(mensagens,
                             modelo='gpt-3.5-turbo',
                             temperatura=0,
                             stream=False):
-    openai.api_key = openai_key
-    response = openai.ChatCompletion.create(
+    client = openai.OpenAI(api_key=openai_key)
+    response = client.chat.completions.create(
         model=modelo,
         messages=mensagens,
         temperature=temperatura,
