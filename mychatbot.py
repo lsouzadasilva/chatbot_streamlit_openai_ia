@@ -50,10 +50,10 @@ def pagina_principal():
     prompt = st.chat_input('Faça sua pergunta aqui: ')
     if prompt:
         if st.session_state['api_key'] == '':
-            st.error('Adicone uma chave de api na aba de configurações')
+            st.error('Adicione uma chave de api na aba de configurações')
         else:
             nova_mensagem = {'role': 'user',
-                            'content': prompt}
+                             'content': prompt}
             chat = st.chat_message(nova_mensagem['role'])
             chat.markdown(nova_mensagem['content'])
             mensagens.append(nova_mensagem)
@@ -66,12 +66,15 @@ def pagina_principal():
                                                 st.session_state['api_key'],
                                                 modelo=st.session_state['modelo'],
                                                 stream=True)
+            
             for resposta in respostas:
-                resposta_completa += resposta.choices[0].delta.content or ''
+                # Verifica se 'content' está presente dentro de 'delta'
+                if 'content' in resposta.choices[0].delta:
+                    resposta_completa += resposta.choices[0].delta['content'] or ''
                 placeholder.markdown(resposta_completa + "▌")
             placeholder.markdown(resposta_completa)
             nova_mensagem = {'role': 'assistant',
-                            'content': resposta_completa}
+                             'content': resposta_completa}
             mensagens.append(nova_mensagem)
 
             st.session_state['mensagens'] = mensagens
