@@ -117,11 +117,28 @@ def tab_configuracoes(tab):
         st.session_state['api_key'] = chave
         salva_chave(chave)
         tab.success('Chave salva com sucesso')
+        
+        
+    # MAIN ==================================================
 
-        st.sidebar.divider()
-        st.sidebar.markdown("Desenvolvido por [Leandro Souza](https://br.linkedin.com/in/leandro-souza-313136190)")
+def explicacao():
+    st.sidebar.markdown("""
+    ## Bem-vindo ao J.A.R.V.I.S! 🤖  
 
-# MAIN ==================================================
+    Esta aplicação permite interações com modelos de IA da OpenAI, proporcionando respostas inteligentes e contextualizadas para suas perguntas.  
+
+    Para utilizar o chatbot, basta inserir sua **chave da API da OpenAI** e selecionar o modelo desejado (**GPT-3.5-Turbo** ou **GPT-4**). O chatbot armazena o histórico das conversas, permitindo que você acesse e continue interações anteriores a qualquer momento.  
+
+    ### 🔹 Como funciona?  
+    ✅ **Insira sua chave da API** na aba de **Configurações**.  
+    ✅ **Escolha entre os modelos** GPT-3.5-Turbo e GPT-4.  
+    ✅ **Inicie a conversa** digitando sua pergunta no chat.  
+    ✅ **Acesse a aba Conversas** para visualizar ou continuar diálogos anteriores.  
+    """)
+    st.sidebar.divider()
+    st.sidebar.markdown("Desenvolvido por [Leandro Souza](https://br.linkedin.com/in/leandro-souza-313136190)")
+
+
 
 def main():
     inicializacao()
@@ -129,6 +146,7 @@ def main():
     tab1, tab2 = st.sidebar.tabs(['Conversas', 'Configurações'])
     tab_conversas(tab1)
     tab_configuracoes(tab2)
+    explicacao()
 
 
 
