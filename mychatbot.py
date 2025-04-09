@@ -7,9 +7,11 @@ from utils_file import *
 def config_pag():
         st.set_page_config(
                 page_title='J.A.R.V.I.S',
-                page_icon=':robot_face:'
+                page_icon='🤖'
             )
 config_pag()
+
+st.sidebar.markdown("<h2 style='color: #A67C52;'>J.A.R.V.I.S 🤖</h2>", unsafe_allow_html=True)
 
 
 # OCULTAR MENUS ==================================================
