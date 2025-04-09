@@ -125,6 +125,7 @@ def tab_configuracoes(tab):
     # MAIN ==================================================
 
 def explicacao():
+    st.sidebar.divider()
     st.sidebar.markdown("""
     ## Bem-vindo ao J.A.R.V.I.S! 🤖  
 
