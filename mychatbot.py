@@ -43,7 +43,7 @@ def pagina_principal():
     
     mensagens = ler_mensagens(st.session_state['mensagens'])
 
-    st.header('🤖 J.A.R.V.I.S', divider=True)
+    st.header('🤖 Em que posso te ajudar ?', divider=True)
 
     for mensagem in mensagens:
         chat = st.chat_message(mensagem['role'])
